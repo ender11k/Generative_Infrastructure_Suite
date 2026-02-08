@@ -1,0 +1,10 @@
+Category,Item,Unit,Rate,Qty,Total
+Earthwork,Excavation,m3,350.0,20495.4624,7173411.84
+Earthwork,Pond Excavation,m3,350.0,9812.5,3434375.0
+Earthwork,Trunk Excavation,m3,350.0,4651.598427315575,1628059.449560451
+Infrastructure,Feeder Pipe,m,2800.0,45.0,126000.0
+Infrastructure,Main Trunk Sewer,m,8500.0,232.57992136577874,1976929.3316091194
+Infrastructure,Street Pipe,m,2800.0,711.0,1990800.0
+Roads,Asphalt Road,sqm,650.0,8100.0,5265000.0
+Structure,Fdn Concrete,m3,7500.0,15599.519999999997,116996399.99999997
+Structure,Fdn Steel,kg,85.0,1715947.1999999997,145855511.99999997
