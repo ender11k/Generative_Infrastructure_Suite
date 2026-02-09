@@ -29,14 +29,6 @@ The **Generative Infrastructure Suite** is a web-based application that automate
 * **Data Processing:** Pandas & NumPy
 * **Backend Logic:** Python
 
-## 📸 Screenshots
-
-*(Add a screenshot of your 3D view here)*
-![3D View Placeholder](https://via.placeholder.com/800x400?text=Insert+Screenshot+of+3D+Model+Here)
-
-*(Add a screenshot of your Sidebar/Inputs here)*
-![UI Placeholder](https://via.placeholder.com/800x400?text=Insert+Screenshot+of+Control+Panel)
-
 ## 📦 Installation & Local Run
 
 Want to run this on your own machine? Follow these steps:
