@@ -59,11 +59,15 @@ def get_soil_name_interactive(brain, prompt_text="Select Soil Type"):
     if not user_input: return "Murum"
     return rhino_safe_map.get(user_input, user_input)
 
-def is_point_in_box(pt, box_corners):
-    min_x = min(box_corners[0][0], box_corners[2][0])
-    max_x = max(box_corners[0][0], box_corners[2][0])
-    min_y = min(box_corners[0][1], box_corners[2][1])
-    max_y = max(box_corners[0][1], box_corners[2][1])
+def is_point_in_box(pt, corners):
+    # Extract all X and Y coordinates from the 4 corners to find true bounds
+    xs = [p[0] for p in corners]
+    ys = [p[1] for p in corners]
+    
+    min_x, max_x = min(xs), max(xs)
+    min_y, max_y = min(ys), max(ys)
+    
+    # Check if the point is within the min/max bounds
     return (min_x <= pt[0] <= max_x) and (min_y <= pt[1] <= max_y)
 
 def civil_ai_master_suite():
@@ -106,12 +110,16 @@ def civil_ai_master_suite():
     while True:
         add_zone = rs.GetString("Add Soil Zone?", "No", strings=["Yes", "No"])
         if not add_zone or add_zone != "Yes": break
-        z_rect = rs.GetRectangle(1, base_point=origin) 
+        z_rect = rs.GetRectangle(1) 
         if z_rect:
             rs.CurrentLayer("AI_Zones")
             rs.AddPolyline([z_rect[0], z_rect[1], z_rect[2], z_rect[3], z_rect[0]])
-            zone_soil = get_soil_name_interactive(brain, "Zone Soil")
+            zone_soil = get_soil_name_interactive(brain, "Soil Type for this Zone")
             special_zones.append((z_rect, zone_soil))
+            
+            # Label the zone center
+            center = [(z_rect[0].X + z_rect[2].X)/2, (z_rect[0].Y + z_rect[2].Y)/2, origin[2]]
+            rs.AddTextDot(zone_soil, center)
 
     # 4. GENERATE
     rs.EnableRedraw(False)
