@@ -10,7 +10,7 @@
 The **Generative Infrastructure Suite** is a web-based application that automates the creation of industrial master plans. By combining Machine Learning with parametric design, it allows users to instantly generate 3D layouts, predict foundation requirements based on soil conditions, and calculate real-time cost estimates (BOQ).
 
 ## 🚀 Live Demo
-**[Click here to try the app live!](https://generative-infrastructure-suite.streamlit.app/)**
+**[Click here to try the app live!](https://generativeinfra.streamlit.app/)**
 *(Note: If the link is not active, the project is likely running locally. See Installation steps below.)*
 
 ## ✨ Key Features
@@ -52,7 +52,3 @@ Want to run this on your own machine? Follow these steps:
 4.  **Open your browser:**
     The app should automatically open at `http://localhost:8501`.
 
-## 📂 Project Structure
-
-* `app.py` - The main application script containing the UI, 3D logic, and calculation engine.
-* `civil_ai_brain_rhino.pkl
